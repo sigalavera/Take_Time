@@ -1,10 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Login from "../../Pages/Login/LoginComponent";
+
 const Header = () => {
   return (
-    <h1>
+    <div>
       HEADER
       <nav>
+        <div>
+          <Login/>
+        </div>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -21,7 +26,7 @@ const Header = () => {
          
         </ul>
       </nav>
-    </h1>
+    </div>
   );
 };
 export default Header;
