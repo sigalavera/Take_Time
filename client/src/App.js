@@ -12,6 +12,7 @@ import UserProfile from "./Components/Pages/UserProfile/UserProfileComponent";
 function App() {
   return (
     <div className="App">
+      <div className="body-app">
       <Router>
         <Header />
         <Switch>
@@ -37,6 +38,7 @@ function App() {
 
         <Footer />
       </Router>
+      </div>
     </div>
   );
 }

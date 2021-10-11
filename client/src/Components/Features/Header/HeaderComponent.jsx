@@ -1,10 +1,11 @@
 import React from "react";
+import "./header.css";
 import { Link } from "react-router-dom";
 const Header = () => {
   return (
-    <h1>
-      HEADER
-      <nav>
+    <div className="continer">
+      <h1>kdkdkdkd</h1>
+      <nav className="link-bar">
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -18,10 +19,12 @@ const Header = () => {
           <li>
             <Link to="/StudyContent">Study Content</Link>
           </li>
-         
         </ul>
       </nav>
-    </h1>
+      <div className="logo">
+      <h1>Take Time</h1>
+      </div>
+    </div>
   );
 };
 export default Header;
