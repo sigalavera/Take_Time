@@ -1,11 +1,18 @@
 import React from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
+import Login from "../../Pages/Login/LoginComponent";
+
 const Header = () => {
   return (
     <div className="continer">
-      <h1>kdkdkdkd</h1>
-      <nav className="link-bar">
+      <div>
+      HEADER
+      </div>
+      <nav>
+        <div>
+          <Login/>
+        </div>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -21,9 +28,6 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <div className="logo">
-      <h1>Take Time</h1>
-      </div>
     </div>
   );
 };

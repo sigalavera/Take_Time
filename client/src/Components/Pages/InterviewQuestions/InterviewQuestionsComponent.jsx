@@ -5,9 +5,9 @@ import ReadingQuestions from "../../Features/ReadingQuestions/ReadingQuestionsCo
 const InterviewQuestions = () => {
     return (
         <>
-            <h1>
+            {/* <h1>
                 Interview questions
-            </h1>
+            </h1> */}
             <AddQuestion />
             <ReadingQuestions />
         </>
