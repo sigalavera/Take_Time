@@ -8,7 +8,6 @@ const Login = () => {
 
     const googleSuccess = (res) => {
         console.log(res);
-
     }
     return (
         <div>
