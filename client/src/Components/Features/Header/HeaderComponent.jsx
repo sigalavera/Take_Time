@@ -12,7 +12,13 @@ const Header = () => {
           <li>
             <Link to="/chat">Chat</Link>
           </li>
-        
+          <li>
+            <Link to="/InterviewQuestions">Interview Questions</Link>
+          </li>
+          <li>
+            <Link to="/StudyContent">Study Content</Link>
+          </li>
+         
         </ul>
       </nav>
     </h1>
