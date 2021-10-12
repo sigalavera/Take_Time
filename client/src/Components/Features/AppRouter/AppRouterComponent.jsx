@@ -6,7 +6,8 @@ import InterviewQuestions from "../../Pages/InterviewQuestions/InterviewQuestion
 import Login from "../../Pages/Login/LoginComponent";
 import StudyContent from "../../Pages/StudyContent/StudyContentComponent";
 import UserProfile from "../../Pages/UserProfile/UserProfileComponent";
-
+import Admin from "../../Pages/Admin/Admin";
+import Store from "../../Pages/Store/Store";
 const AppRouter = () => {
     return (
             <Switch>
@@ -15,6 +16,8 @@ const AppRouter = () => {
                 </Route>
                 <Route path="/InterviewQuestions">
                     <InterviewQuestions />
+                    <Admin />
+                    <Store />
                 </Route>
                 <Route path="/StudyContent">
                     <StudyContent />
@@ -27,6 +30,10 @@ const AppRouter = () => {
                 </Route>
                 <Route path="/">
                     <Login />
+                   
+                </Route>
+                <Route path="/Admin">
+
                 </Route>
             </Switch>
     )
