@@ -12,7 +12,7 @@
     flex-direction: column;
     font-size: 30px;
     /* border: 1px solid white; */
-    color: rgb(245, 235, 235);
+    color: rgb(243, 239, 239);
     width: 100%;
     height: 330px;
     
@@ -34,24 +34,24 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    /* padding: 22px; */
-    /* border: 1px solid white; */
-     width: 100%;
-     height: 80px;
-     margin-top: 20px;
+    width: 100%;
+    height: 80px;
+    margin-top: 20px;
      
 }
 .btn{   
     width: 200px;
     height: 50px;
-    background-color: #fff;
+    background-color: #2C6AFF;
+    /* background-color: #fff; */
     border-radius: 32px;
     font-size: 18px;
     border: none;
     margin-right: 70px;
+    color: #fff;
 }
-.btn:hover{
+/* .btn:hover{
     background-color: #2C6AFF;
     color: white;
-}
+} */
 
