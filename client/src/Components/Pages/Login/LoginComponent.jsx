@@ -51,7 +51,7 @@ const Login = () => {
   };
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <h1> Take Time </h1>
       <p>אתר כללי לרכישה ומכירת שעות תרגול ושאלות ראיון בתחום הייטק.</p>
       <GoogleLogin
