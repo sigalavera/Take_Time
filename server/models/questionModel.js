@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const Joigoose = require("joigoose")(mongoose);
 
 const questionSchema = joi.object({
-    questionTitle: joi.string().required(),
     question: joi.string().required(),
     answer: joi.string().required(),
     createdAt: joi.string().default(Date.now)
