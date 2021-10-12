@@ -9,12 +9,12 @@ import { AUTH } from "../../../Redux/Actions/types";
 const Login = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-
   const googleFailure = () => {
     console.log("fuck off");
   };
 
   const googleSuccess = async (res) => {
+    console.log('hioho');
     const result = res?.profileObj;
     const token = res?.tokenId;
 
