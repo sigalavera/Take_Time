@@ -20,7 +20,8 @@ const Login = () => {
     try {
       dispatch({ type: AUTH, data: { result, token } });
       console.log(res);
-  
+      
+      
       history.push("/home");
     } catch (error) {
       console.log(error);
