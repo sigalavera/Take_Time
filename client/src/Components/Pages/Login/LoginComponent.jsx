@@ -15,7 +15,7 @@ const Login = () => {
   };
 
   const googleSuccess = async (res) => {
-    console.log('hioho');
+   
     const result = res?.profileObj;
     const token = res?.tokenId;
 
@@ -24,12 +24,12 @@ const Login = () => {
       console.log(res);
       let data = `{
    "username": "${res.profileObj.name}",
-   "secret": "secret-123-jBj02",
+   "secret": "${res.profileObj.googleId}",
    "email": "${res.profileObj.email}",
    "first_name": "${res.profileObj.givenName}",
    "last_name": "${res.profileObj.familyName}"
      }`;
-
+     console.log(data);
       let config = {
         method: "post",
         url: "https://api.chatengine.io/users/",
