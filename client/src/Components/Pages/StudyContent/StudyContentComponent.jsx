@@ -17,9 +17,9 @@ const StudyContent = () => {
             <Search />
             <div>
                 {
-                    posts?.map((post) => {
+                    posts?.map((post, key) => {
                         return (
-                            <div>
+                            <div key={key}>
                                 שם המחבר : {post.fullName}
                                 <br></br>
                                 נושא : {post.title}

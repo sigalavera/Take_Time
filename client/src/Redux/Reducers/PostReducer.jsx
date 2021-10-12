@@ -1,10 +1,14 @@
-const PostReducer = (posts = [],action) => {
-  switch(action.type){
-    
+import { GET_POSTS } from '../Actions/types'
 
-     default:
-         return posts;
+const PostReducer = (posts = {}, action) => {
+  switch (action.type) {
+    case GET_POSTS:
+      debugger
+      return action.payload
+
+    default:
+      return posts;
   }
 }
 
-export default PostReducer 
+export default PostReducer
