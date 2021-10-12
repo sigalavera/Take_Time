@@ -5,7 +5,7 @@ const Cases = () => {
   const [cases,setCases] = useState([]);
 
   useEffect(()=>{
-     getAllCases().then(res => setCases(res.data.cases))
+     getAllCases().then(res => setCases(res.cases))
   },[])
   console.log(cases,"dsadsa");
   const mapCases = (cases) => 
