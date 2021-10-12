@@ -6,7 +6,6 @@ import Search from "../../Features/Search/SearchComponent";
 const StudyContent = () => {
     const posts = useSelector(state => state.posts);
 
-    console.log(posts[0]);
     return (
         <div>
             <Search />

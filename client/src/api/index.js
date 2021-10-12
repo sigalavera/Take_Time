@@ -11,7 +11,7 @@ API.interceptors.request.use((req) => {
   return req;
 });
 
-export const getAllCases = async () => await axios.get("http://localhost:5000/case/getAllCases");
+// export const getAllCases = async () => await axios.get("http://localhost:5000/case/getAllCases");
 // export const getPosts = () => API.get("/post/getAllPosts");
 
 

@@ -10,32 +10,30 @@ import Admin from "../../Pages/Admin/Admin";
 import Store from "../../Pages/Store/Store";
 const AppRouter = () => {
     return (
-            <Switch>
-                <Route path="/chat">
-                    <ChatContainer />
-                </Route>
-                <Route path="/InterviewQuestions">
-                    <InterviewQuestions />
-                    <Admin />
-                    <Store />
-                </Route>
-                <Route path="/StudyContent">
-                    <StudyContent />
-                </Route>
-                <Route path="/UserProfile">
-                    <UserProfile />
-                </Route>
-                <Route path="/home">
-                    <Home />
-                </Route>
-                <Route path="/">
-                    <Login />
-                   
-                </Route>
-                <Route path="/Admin">
-
-                </Route>
-            </Switch>
+        <Switch>
+            <Route path="/chat">
+                <ChatContainer />
+            </Route>
+            <Route path="/InterviewQuestions">
+                <InterviewQuestions />
+            </Route>
+            <Route path="/StudyContent">
+                <StudyContent />
+                <Store />
+            </Route>
+            <Route path="/UserProfile">
+                <UserProfile />
+            </Route>
+            <Route path="/home">
+                <Home />
+            </Route>
+            <Route path="/Admin">
+                <Admin />
+            </Route>
+            <Route exact path="/">
+                <Login />
+            </Route>
+        </Switch>
     )
 }
 export default AppRouter;
