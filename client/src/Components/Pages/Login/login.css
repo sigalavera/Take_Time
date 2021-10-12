@@ -42,15 +42,16 @@
 .btn{   
     width: 200px;
     height: 50px;
-    background-color: #fff;
+    background-color: #2C6AFF;
+    /* background-color: #fff; */
     border-radius: 32px;
     font-size: 18px;
     border: none;
     margin-right: 70px;
-    color: rgb(65, 63, 63);
+    color: #fff;
 }
-.btn:hover{
+/* .btn:hover{
     background-color: #2C6AFF;
     color: white;
-}
+} */
 
