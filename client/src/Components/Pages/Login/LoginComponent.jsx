@@ -1,6 +1,8 @@
 import React from "react";
 import { GoogleLogin } from "react-google-login";
 import axios from "axios";
+import NavBar from "../../Features/Navbar/NavbarComponent";
+
 const Login = () => {
   const googleFailure = () => {
     console.log("fuck off");
@@ -33,6 +35,7 @@ const Login = () => {
   };
   return (
     <div>
+      <NavBar />
       <h1> Take Time </h1>
       <p>אתר כללי לרכישה ומכירת שעות תרגול ושאלות ראיון בתחום הייטק.</p>
       <GoogleLogin

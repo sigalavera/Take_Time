@@ -8,10 +8,13 @@ app.use(cors());
 
 const db = require("./DB");
 
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// routes
+const caseRouter = require("./routes/caseRouter");
+
+app.use("/case", caseRouter);
 app.get("/", (req, res) => {
     res.send("Server is up");
 })
