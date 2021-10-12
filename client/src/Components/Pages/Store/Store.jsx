@@ -20,8 +20,8 @@ const Store = () =>{
                   <h3>{item.title}</h3>
                   <h5>{item.content}</h5>
                   <div className="features-container">
-                  <p>rating</p>
-                  <p>Chat</p>
+                  <button>rating</button>
+                  <button>Chat</button>
                   </div>
                  </div>
              )
