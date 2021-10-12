@@ -13,8 +13,12 @@ app.use(express.urlencoded({ extended: true }));
 
 // routes
 const caseRouter = require("./routes/caseRouter");
+const postRouter = require("./routes/postRouter");
+
 
 app.use("/case", caseRouter);
+app.use("/post", postRouter);
+
 app.get("/", (req, res) => {
     res.send("Server is up");
 })

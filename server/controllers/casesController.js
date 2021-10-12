@@ -16,7 +16,7 @@ const getAllCases = async (req, res, next) => {
 
 const createCase = async (req, res, next) => {
     try {
-        const newCase = await caseModel.insertMany(res.body);
+        const newCase = await caseModel.insertMany(req.body);
         res.json({ newCase, message: "ca" }).status(201);
         const { error } = validCase(req.body);
         if (error) {

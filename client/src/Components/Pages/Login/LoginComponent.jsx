@@ -1,68 +1,81 @@
 import React from "react";
 import { GoogleLogin } from "react-google-login";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router";
 import NavBar from "../../Features/Navbar/NavbarComponent";
 import "./login.css";
+import { AUTH } from "../../../Redux/Actions/types";
 
 const Login = () => {
-    const googleFailure = () => {
-        console.log("fuck off");
-    };
+  const dispatch = useDispatch();
+  const history = useHistory();
 
-    const googleSuccess = (res) => {
-        console.log(res);
-        let data = `{
-	"username": "${res.profileObj.name}",
-	"secret": "secret-123-jBj02",
-	"email": "${res.profileObj.email}",
-	"first_name": "${res.profileObj.givenName}",
-	"last_name": "${res.profileObj.familyName}"
-    }`;
+  const googleFailure = () => {
+    console.log("fuck off");
+  };
 
-        let config = {
-            method: "post",
-            url: "https://api.chatengine.io/users/",
-            headers: "PRIVATE-KEY : f6095433-da83-4fba-b6d7-cf422d6293b5",
-            data: data,
-        };
+  const googleSuccess = async (res) => {
+    const result = res?.profileObj;
+    const token = res?.tokenId;
 
-        axios(config)
-            .then(function (response) {
-                console.log(JSON.stringify(response.data));
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    };
-    return (
-        <div className="body-log">
-            
-                {/* <NavBar /> */}
-                <div className="title-log">
-                    <h1> Take Time </h1>
-                    <p>אתר כללי לרכישה ומכירת <br></br>. שעות תרגול ושאלות ראיון בתחום הייטק</p>
-                </div>
-                <div className="continer-btn-log">
-                <GoogleLogin
-                    clientId="1010289593521-j7qff0ed24beejl2ij3hrt9fii0k7k9i.apps.googleusercontent.com"
-                    render={(renderProrps) => (
-                        
-                        <button className="btn"
-                            color="blue"
-                            onClick={renderProrps.onClick}
-                            disabled={renderProrps.disabled}
-                            variant="contained"
-                        >
-                            Google sing in
-                        </button>
-                    )}
-                    onSuccess={googleSuccess}
-                    onFailure={googleFailure}
-                    cookiePolicy="single_host_origin"
-                />
-                </div>
-            </div>
-      
-    );
+    try {
+      dispatch({ type: AUTH, data: { result, token } });
+      console.log(res);
+      let data = `{
+   "username": "${res.profileObj.name}",
+   "secret": "secret-123-jBj02",
+   "email": "${res.profileObj.email}",
+   "first_name": "${res.profileObj.givenName}",
+   "last_name": "${res.profileObj.familyName}"
+     }`;
+
+      let config = {
+        method: "post",
+        url: "https://api.chatengine.io/users/",
+        headers: "PRIVATE-KEY : f6095433-da83-4fba-b6d7-cf422d6293b5",
+        data: data,
+      };
+
+      await axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      history.push("/");
+    } catch (error) {
+      console.log(error);
+    }
+
+  };
+  return (
+    <div className="body-log">
+      {/* <NavBar /> */}
+      <div className="title-log">
+        <h1> Take Time </h1>
+        <p>אתר כללי לרכישה ומכירת שעות תרגול <br></br>. ושאלות ראיון בתחום הייטק</p>
+      </div>
+      <div className="continer-btn-log">
+        <GoogleLogin
+          clientId="1010289593521-j7qff0ed24beejl2ij3hrt9fii0k7k9i.apps.googleusercontent.com"
+          render={(renderProrps) => (
+            <button className="btn"
+              color="blue"
+              onClick={renderProrps.onClick}
+              disabled={renderProrps.disabled}
+              variant="contained"
+            >
+              Google sing in
+            </button>
+          )}
+          onSuccess={googleSuccess}
+          onFailure={googleFailure}
+          cookiePolicy="single_host_origin"
+        />
+      </div>
+    </div>
+  );
 };
 export default Login;
