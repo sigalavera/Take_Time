@@ -8,12 +8,12 @@ import { AUTH } from "../../../Redux/Actions/types";
 const Login = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+
   const googleFailure = () => {
-    console.log("fuck off");
+    console.log("Google Sing In was unuccessful. Try Again Later.");
   };
 
   const googleSuccess = async (res) => {
-   
     const result = res?.profileObj;
     const token = res?.tokenId;
 
@@ -29,7 +29,6 @@ const Login = () => {
   };
   return (
     <div className="body-log">
-      {/* <NavBar /> */}
       <div className="title-log">
         <h1> Take Time </h1>
         <p>אתר כללי לרכישה ומכירת שעות תרגול <br></br>. ושאלות ראיון בתחום הייטק</p>
