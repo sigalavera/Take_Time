@@ -1,20 +1,24 @@
 import React,{useEffect, useState} from "react";
-import { getAllCases } from "../../../api";
-import './cases.css'
-const Cases = () => {
-  const [cases,setCases] = useState([]);
+import {useSelector,useDispatch} from "react-redux";
+import { getAllCases } from "../../../Redux/Actions/cases";
+import './cases.css';
 
+const Cases = () => {
+ const cases = useSelector(state => state.cases)
+ const dispatch = useDispatch();
+ 
   useEffect(()=>{
-     getAllCases().then(res => setCases(res.cases))
+  dispatch(getAllCases())
+  
   },[])
-  console.log(cases,"dsadsa");
-  const mapCases = (cases) => 
+ console.log(cases);
+  const mapCases = () => 
     cases.map((item,key)=>{
         return(
             <tr key={key}>
-                <td>{item.title}</td>
-                <td>{item.createdAt}</td>
-                <td>{item.descripition}</td>
+                <td>{item?.title}</td>
+                <td>{item?.createdAt}</td>
+                <td>{item?.descripition}</td>
             </tr>
         )
    })
@@ -24,9 +28,17 @@ const Cases = () => {
          <th>Name</th>
          <th>Date</th>
          <th>Descripition</th>
-         {
-            mapCases(cases) 
-         }
+      {
+          cases?.map((item,key)=>
+            (
+                <tr key={key}>
+                    <td>{item?.title}</td>
+                    <td>{item?.createdAt}</td>
+                    <td>{item?.descripition}</td>
+                </tr>
+            )
+       )
+      }
      </table>
   )
 }

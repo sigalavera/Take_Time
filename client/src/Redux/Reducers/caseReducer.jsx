@@ -1,10 +1,13 @@
-
-const PostReducer = (posts = [],action) => {
+import {GET_CASES} from "../Actions/types"
+const caseReducer =  (cases = [],action) => {
     switch(action.type){
-  
+     case GET_CASES:
+      console.log(action.payload);
+       return action.payload;
+
        default:
-           return posts;
+           return cases;
     }
   }
   
-  export default PostReducer 
+  export default caseReducer; 
