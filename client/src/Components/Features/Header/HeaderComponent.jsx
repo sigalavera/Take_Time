@@ -8,7 +8,7 @@ const Header = () => {
       HEADER
       <NavBar/>
       <div>
-        <h1>Take Time.</h1>
+        <h1>Take Time .</h1>
         </div>
     </div>
   );
