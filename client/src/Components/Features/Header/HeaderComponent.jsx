@@ -5,7 +5,6 @@ import "./header.css";
 const Header = () => {
   return (
     <div className="continer">
-      <button onClick={localStorage.clear()}> LOGOUT </button>
       <NavBar/>
       <div>
         <h1>Take Time .</h1>
