@@ -4,9 +4,9 @@ const mongoose = require("mongoose");
 const Joigoose = require("joigoose")(mongoose);
 
 const caseSchema = joi.object({
-    title: joi.string(),
-    descripition: joi.string(),
-    createdAt: joi.string().default(new Date())
+    title: joi.string().required(),
+    descripition: joi.string().required(),
+    createdAt: joi.string().default(Date.now)
 
 })
 
