@@ -30,9 +30,9 @@ const AppRouter = () => {
             <Route path="/Admin">
                 <Admin />
             </Route>
-            <Route exact path="/">
+            {/* <Route exact path="/">
                 <Login />
-            </Route>
+            </Route> */}
         </Switch>
     )
 }
