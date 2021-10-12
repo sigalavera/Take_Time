@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware, componse, compose } from 'redux';
-import thunk from 'thunk';
-import reducers from './Redux/Reducers'
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import reducers from './Redux/Reducers/Index'
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 ReactDOM.render(
