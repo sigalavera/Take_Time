@@ -23,8 +23,7 @@ const createPost = async (req, res, next) => {
         res.json({ newPost, message: "ca" }).status(201);
 
     } catch (e) {
-        console.log(e);
-        res.status(400).json({ message: "Server error", })
+        res.status(400).json({ message: "bad request", })
     }
 
 }
