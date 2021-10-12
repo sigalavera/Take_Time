@@ -35,6 +35,10 @@ const AppRouter = () => {
             <Route exact path="/">
                 <Home />
             </Route>
+            <Route path="/DM">
+                <DM />
+                <AddPersonToChat />
+            </Route>
             
             {/* <Route path="/">
                 <Login />
