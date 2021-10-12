@@ -14,40 +14,40 @@ const Login = () => {
     console.log("fuck off");
   };
 
-  const googleSuccess = (res) => {
+  const googleSuccess = async (res) => {
     const result = res?.profileObj;
     const token = res?.tokenId;
 
     try {
-      dispatch({ type: AUTH, data: { result, token } });
-
+     dispatch({ type: AUTH, data: { result, token } });
+     console.log(res);
+     let data = `{
+   "username": "${res.profileObj.name}",
+   "secret": "secret-123-jBj02",
+   "email": "${res.profileObj.email}",
+   "first_name": "${res.profileObj.givenName}",
+   "last_name": "${res.profileObj.familyName}"
+     }`;
+ 
+     let config = {
+       method: "post",
+       url: "https://api.chatengine.io/users/",
+       headers: "PRIVATE-KEY : f6095433-da83-4fba-b6d7-cf422d6293b5",
+       data: data,
+     };
+ 
+     await axios(config)
+       .then(function (response) {
+         console.log(JSON.stringify(response.data));
+       })
+       .catch(function (error) {
+         console.log(error);
+       });
       history.push("/");
     } catch (error) {
       console.log(error);
     }
-    console.log(res);
-    let data = `{
-	"username": "${res.profileObj.name}",
-	"secret": "secret-123-jBj02",
-	"email": "${res.profileObj.email}",
-	"first_name": "${res.profileObj.givenName}",
-	"last_name": "${res.profileObj.familyName}"
-    }`;
 
-    let config = {
-      method: "post",
-      url: "https://api.chatengine.io/users/",
-      headers: "PRIVATE-KEY : f6095433-da83-4fba-b6d7-cf422d6293b5",
-      data: data,
-    };
-
-    axios(config)
-      .then(function (response) {
-        console.log(JSON.stringify(response.data));
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
   };
   return (
     <div>
