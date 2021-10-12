@@ -4,13 +4,9 @@ import { getPosts } from "../../../Redux/Actions/PostAction";
 import Search from "../../Features/Search/SearchComponent";
 
 const StudyContent = () => {
-    const dispatch = useDispatch();
     const posts = useSelector(state => state.posts);
-    
-    useEffect(() => {
-        dispatch(getPosts())
-    }, [dispatch])
-    console.log(posts);
+
+    console.log(posts[0]);
     return (
         <div>
             <Search />
