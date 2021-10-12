@@ -1,15 +1,29 @@
 import React, { useEffect } from "react";
-import { useDispatch } from 'react-redux';
-import { getPosts } from "../../../Redux/Actions/PostAction";
-const StudyContent = () => {
-    const dispatch = useDispatch();
+import Search from "../../Features/Search/SearchComponent";
 
-    useEffect(() => {
-        dispatch(getPosts())
-    }, [dispatch])
+const StudyContent = () => {
+
+
     return (
         <div>
-
+            <Search />
+            {/* <div>
+                {
+                    posts?.map((post, key) => {
+                        return (
+                            <div key={key}>
+                                שם המחבר : {post.fullName}
+                                <br></br>
+                                נושא : {post.title}
+                                <br></br>
+                                תיאור : {post.content}
+                                <br></br>
+                                תגובות : {post.comments}
+                            </div>
+                        )
+                    })
+                }
+            </div> */}
         </div>
     )
 }
