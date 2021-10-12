@@ -1,4 +1,8 @@
 /* CHAT STYLES  */
+.chat-container{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 .chat-container * {
     font-family: Avenir, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
       Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
