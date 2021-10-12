@@ -10,9 +10,9 @@ import { useDispatch } from "react-redux";
 function App() {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getPosts())
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(getPosts())
+  // }, [dispatch])
 
   return (
     <div className="App">

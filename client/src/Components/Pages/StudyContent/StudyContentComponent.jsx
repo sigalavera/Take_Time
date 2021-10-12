@@ -10,7 +10,7 @@ const StudyContent = () => {
     return (
         <div>
             <Search />
-            <div>
+            {/* <div>
                 {
                     posts?.map((post, key) => {
                         return (
@@ -26,7 +26,7 @@ const StudyContent = () => {
                         )
                     })
                 }
-            </div>
+            </div> */}
         </div>
     )
 }
