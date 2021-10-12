@@ -7,10 +7,10 @@ const Cases = () => {
  const cases = useSelector(state => state.cases)
  const dispatch = useDispatch();
  
-  useEffect(()=>{
-  dispatch(getAllCases())
+//   useEffect(()=>{
+//   dispatch(getAllCases())
   
-  },[])
+//   },[])
  console.log(cases);
   const mapCases = () => 
     cases.map((item,key)=>{
@@ -29,15 +29,17 @@ const Cases = () => {
          <th>Date</th>
          <th>Descripition</th>
       {
-          cases?.map((item,key)=>
-            (
-                <tr key={key}>
-                    <td>{item?.title}</td>
-                    <td>{item?.createdAt}</td>
-                    <td>{item?.descripition}</td>
-                </tr>
-            )
-       )
+          !cases?("no post"):(
+          cases.map((item,key)=>
+          (
+              <tr key={key}>
+                  <td>{item?.title}</td>
+                  <td>{item?.createdAt}</td>
+                  <td>{item?.descripition}</td>
+              </tr>
+          )
+     ))
+          
       }
      </table>
   )

@@ -12,7 +12,7 @@ API.interceptors.request.use((req) => {
   return req;
 });
 
-export const getAllCases = async () => await axios.get("http://localhost:5000/case/getAllCases");
+// export const getAllCases = async () => await axios.get("http://localhost:5000/case/getAllCases");
 
 
 
@@ -20,3 +20,4 @@ export const getAllCases = async () => await axios.get("http://localhost:5000/ca
 //export const fetchPosts = () => API.get("/posts");
 
 export const signIn = (userData) => API.post("/user/signin", userData);
+export const getAllCases = () => API.get("/case/getAllCases");

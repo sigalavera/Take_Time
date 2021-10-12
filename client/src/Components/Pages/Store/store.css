@@ -1,0 +1,7 @@
+.store-container{
+    display: flex;
+}
+.features-container{
+    display: flex;
+    justify-content: space-evenly;
+}
