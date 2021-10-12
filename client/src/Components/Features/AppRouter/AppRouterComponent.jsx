@@ -28,6 +28,9 @@ const AppRouter = () => {
             <Route  path="/Admin">
                 <Admin />
             </Route> 
+            <Route path="/home">
+                <Home />
+            </Route>
             <Route exact path="/">
                 <Home />
             </Route>
