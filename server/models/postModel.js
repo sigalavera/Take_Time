@@ -4,11 +4,11 @@ const mongoose = require("mongoose");
 const Joigoose = require("joigoose")(mongoose);
 
 const postSchema = joi.object({
-    title: joi.string(),
-    comments: joi.string(),
-    content: joi.string(),
-    fullName: joi.string(),
-    createdAt: joi.date()
+    title: joi.string().required(),
+    comments: joi.string().required(),
+    content: joi.string().required(),
+    fullName: joi.string().required(),
+    createdAt: joi.date().required()
 })
 
 const validPost = (postData) => {

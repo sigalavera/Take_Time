@@ -16,11 +16,11 @@ const getAllPosts = async (req, res, next) => {
 const createPost = async (req, res, next) => {
     try {
         const newPost = await postModel.insertMany(req.body);
-        res.json({ newPost, message: "ca" }).status(201);
         const { error } = validPost(req.body);
         if (error) {
             res.json({ error }).status(301);
         }
+        res.json({ newPost, message: "ca" }).status(201);
 
     } catch (e) {
         console.log(e);
