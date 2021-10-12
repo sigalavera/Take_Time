@@ -2,9 +2,9 @@ import React from "react";
 
 const ReadingQuestions = () => {
     return (
-        <h1>
-            Reading questions
-        </h1>
+        <div>
+            <h1> שאלה לדוגמא </h1>
+        </div>
     )
 }
 export default ReadingQuestions;

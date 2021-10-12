@@ -5,6 +5,7 @@ import axios from "axios";
 export const signin = (userData, history) => async (dispatch) => {
   try {
     const { data } = await api.signIn(userData);
+    dispatch({ type: AUTH, data: data });
     let chatData = `{
         "username": "${data.name}",
         "secret": "${data.googleId}",
@@ -27,7 +28,7 @@ export const signin = (userData, history) => async (dispatch) => {
       .catch(function (error) {
         console.log(error);
       });
-    dispatch({ type: AUTH, data: data });
+
     history.push("/");
   } catch (error) {
     console.log(error);
