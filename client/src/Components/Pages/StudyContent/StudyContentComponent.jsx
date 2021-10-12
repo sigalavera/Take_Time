@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import { getPosts } from "../../../Redux/Actions/PostAction";
 import Search from "../../Features/Search/SearchComponent";
 
 const StudyContent = () => {
-    const posts = useSelector(state => state.posts);
+
 
     return (
         <div>
