@@ -19,7 +19,7 @@ const DirectChatPage = () => {
 			<div>
 				<input 
 					placeholder='Username' 
-					value={username} 
+					value="liorlsa9" 
 					onChange={(e) => setUsername(e.target.value)} 
 				/>
 				<button onClick={() => createDirectChat(creds)}>

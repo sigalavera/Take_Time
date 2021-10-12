@@ -10,6 +10,8 @@ import Admin from "../../Pages/Admin/Admin";
 import Store from "../../Pages/Store/Store";
 import AddPersonToChat from "../../Pages/Chat/AddPerson/AddPersonToChat";
 import DM from "../../Pages/Chat/DirectChat/DM";
+
+
 const AppRouter = () => {
     return (
         <Switch>
@@ -32,6 +34,12 @@ const AppRouter = () => {
             <Route path="/Admin">
                 <Admin />
             </Route>
+            <Route path="/DM">
+                <DM />
+                <AddPersonToChat />
+
+            </Route>
+
             {/* <Route exact path="/">
                 <Login />
             </Route> */}
