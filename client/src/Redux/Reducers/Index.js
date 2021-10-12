@@ -1,9 +1,7 @@
 import { combineReducers } from "redux";
 import PostReducer from "./PostReducer";
-import authReducer from "./auth";
-import caseReducer from "./caseReducer";
+import auth from "./auth";
 export default combineReducers({
   PostReducer,
-  authReducer,
-  caseReducer
+  auth,
 });
