@@ -8,6 +8,8 @@ import StudyContent from "../../Pages/StudyContent/StudyContentComponent";
 import UserProfile from "../../Pages/UserProfile/UserProfileComponent";
 import Admin from "../../Pages/Admin/Admin";
 import Store from "../../Pages/Store/Store";
+import AddPersonToChat from "../../Pages/Chat/AddPerson/AddPersonToChat";
+import DM from "../../Pages/Chat/DirectChat/DM";
 const AppRouter = () => {
     return (
             <Switch>
@@ -28,9 +30,13 @@ const AppRouter = () => {
                 <Route path="/home">
                     <Home />
                 </Route>
-                <Route path="/">
-                    <Login />
-                   
+                <Route exact path="/">
+                    <Login />                   
+                </Route>
+                
+                <Route path="/DM">
+                <AddPersonToChat />   
+                <DM />
                 </Route>
                 <Route path="/Admin">
 

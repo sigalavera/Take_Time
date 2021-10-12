@@ -12,6 +12,7 @@ const Cases = () => {
   
 //   },[])
  console.log(cases);
+ 
   const mapCases = () => 
     cases.map((item,key)=>{
         return(
