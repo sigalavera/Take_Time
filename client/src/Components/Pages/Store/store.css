@@ -1,7 +1,50 @@
 .store-container{
     display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    width: 100%;
+    height: fit-content;
+    
+}
+.card-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 4px;
+    border-radius: 12px;
+    border: 1px solid rgb(172, 170, 170);
+    width: 250px;
+    height: 250px;
+}
+ 
+.user{
+    display: flex;
+    align-items: center;
+    /* border: 1px solid rgb(172, 170, 170); */
+    height: 50px;
+}
+
+.info{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    /* border: 1px solid rgb(172, 170, 170); */
+    height: 180px;
 }
 .features-container{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid rgb(172, 170, 170); */
+    height: 40px;
+}
+.features-container button{
+    width: 60px;
+    height: 30px;
+    background-color: #2C6AFF;
+    color: #fff;
+    border-radius: 22px;
+    border: none;
 }
