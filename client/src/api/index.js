@@ -4,9 +4,9 @@ const API = axios.create({
   baseURL :"http://localhost:9000",
 });
 API.interceptors.request.use((req) => {
-  if (localStorage.getItem("profile")) {
+  if (localStorage.getItem("userProfile")) {
     req.headers.Authorization = `Bearer ${JSON.parse(
-      localStorage.getItem("profile")).token
+      localStorage.getItem("userProfile")).token
     }`;
   }
   return req;
@@ -14,3 +14,4 @@ API.interceptors.request.use((req) => {
 // axios example 
 //export const fetchPosts = () => API.get("/posts");
 
+export const signIn = (userData) => API.post("/user/signin", userData);

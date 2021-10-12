@@ -1,14 +1,30 @@
 import React from "react";
 import { GoogleLogin } from "react-google-login";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router";
 import NavBar from "../../Features/Navbar/NavbarComponent";
+import { AUTH } from "../../../Redux/Actions/types";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   const googleFailure = () => {
     console.log("fuck off");
   };
 
   const googleSuccess = (res) => {
+    const result = res?.profileObj;
+    const token = res?.tokenId;
+
+    try {
+      dispatch({ type: AUTH, data: { result, token } });
+
+      history.push("/");
+    } catch (error) {
+      console.log(error);
+    }
     console.log(res);
     let data = `{
 	"username": "${res.profileObj.name}",
