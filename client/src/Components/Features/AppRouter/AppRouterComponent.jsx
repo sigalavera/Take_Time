@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Switch, Route } from "react-router-dom";
 import Home from "../../Pages/Home/HomeComponent";
 import ChatContainer from "../../Pages/Chat/ChatContainer";
 import InterviewQuestions from "../../Pages/InterviewQuestions/InterviewQuestionsComponent";
