@@ -1,9 +1,8 @@
 import { GET_POSTS } from '../Actions/types'
 
-const PostReducer = (posts = {}, action) => {
+const PostReducer = (posts = [], action) => {
   switch (action.type) {
     case GET_POSTS:
-      debugger
       return action.payload
 
     default:
@@ -11,4 +10,4 @@ const PostReducer = (posts = {}, action) => {
   }
 }
 
-export default PostReducer
+export default PostReducer;

@@ -10,7 +10,7 @@ const StudyContent = () => {
     useEffect(() => {
         dispatch(getPosts())
     }, [dispatch])
-    
+    console.log(posts);
     return (
         <div>
             <Search />
