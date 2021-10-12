@@ -1,16 +1,21 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL :"http://localhost:5000",
+  baseURL: "http://localhost:5000",
 });
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("userProfile")) {
     req.headers.Authorization = `Bearer ${JSON.parse(
       localStorage.getItem("userProfile")).token
-    }`;
+      }`;
   }
   return req;
 });
+
+export const getAllCases = async () => await axios.get("http://localhost:5000/case/getAllCases");
+
+
+
 // axios example 
 //export const fetchPosts = () => API.get("/posts");
 
