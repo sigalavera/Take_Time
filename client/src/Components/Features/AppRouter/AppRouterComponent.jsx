@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Switch, Route } from "react-router-dom";
+import {Switch, Route } from "react-router-dom";
 import Home from "../../Pages/Home/HomeComponent";
 import ChatContainer from "../../Pages/Chat/ChatContainer";
 import InterviewQuestions from "../../Pages/InterviewQuestions/InterviewQuestionsComponent";
@@ -15,32 +15,28 @@ import DM from "../../Pages/Chat/DirectChat/DM";
 const AppRouter = () => {
     return (
         <Switch>
-            <Route path="/chat">
+            <Route  path="/chat">
                 <ChatContainer />
             </Route>
-            <Route path="/InterviewQuestions">
+            <Route  path="/InterviewQuestions">
                 <InterviewQuestions />
             </Route>
-            <Route path="/StudyContent">
+            <Route  path="/StudyContent">
                 <StudyContent />
                 <Store />
             </Route>
-            <Route path="/UserProfile">
+            <Route  path="/UserProfile">
                 <UserProfile />
             </Route>
-            <Route path="/home">
+           
+            <Route  path="/Admin">
+                <Admin />
+            </Route> 
+            <Route exact path="/">
                 <Home />
             </Route>
-            <Route path="/Admin">
-                <Admin />
-            </Route>
-            <Route path="/DM">
-                <DM />
-                <AddPersonToChat />
-
-            </Route>
-
-            {/* <Route exact path="/">
+            
+            {/* <Route path="/">
                 <Login />
             </Route> */}
         </Switch>
