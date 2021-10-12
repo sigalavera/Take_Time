@@ -1,19 +1,21 @@
 .App {
   background-color: #1A1A1A;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   
+  display: flex;
+  /* justify-content: center;
+  flex-direction: column; */
+}
+.body-app{
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
-.body-app{
-  /* display: flex; */
-  margin-left: 150px;
+  /* margin-left: 150px; */
   
   background-color: #fff;
   width: 80%;
-  height: 100%;
+  height: 100vh;
   
   
 }
