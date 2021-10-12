@@ -11,7 +11,6 @@ const StudyContent = () => {
         dispatch(getPosts())
     }, [dispatch])
     
-    console.log(posts);
     return (
         <div>
             <Search />
