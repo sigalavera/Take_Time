@@ -1,10 +1,32 @@
-const mongoose =require('mongoose') 
+const joi = require("joi");
+const mongoose = require("mongoose");
+const Joigoose = require("joigoose")(mongoose);
 
-const userSchema = mongoose.Schema({
-    name: {type:String,required :true},
-    email: {type:String,required :true},
-    password: {type:String,required :true},
-    id:{type:String}
-
+const userSchema = joi.object({
+    email: joi.string().required(),
+    coins: joi.number().required().default(10),
+    imageUrl: joi.string().required(),
+    givenName: joi.string().required(),
+    googleId: joi.string().required(),
+    name: joi.string().required(),
 })
-module.exports=  mongoose.model('User',userSchema)
+
+const validUser = (userData) => {
+    const responseFromJoi = userSchema.validate(userData);
+    console.log(responseFromJoi);
+    return responseFromJoi;
+};
+
+const mongooseUserModel = new mongoose.Schema(
+    Joigoose.convert(userSchema)
+);
+
+const userModel = mongoose.model("user", mongooseUserModel);
+
+
+module.exports = userModel;
+
+
+
+
+
