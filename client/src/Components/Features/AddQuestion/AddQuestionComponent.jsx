@@ -7,15 +7,15 @@ const AddQuestion = () => {
         createdAt: ""
     })
 
-    // fetch("http://localhost:5000/question/getAlllQuestions")
-    // handleChange = (e) => {
-    //     setNewQuestion(
-    //         {
-    //             ...newQuestion, 
-    //             [e.target.name]: e.target.value
-    //         }
-    //     )
-    // }
+    fetch("http://localhost:5000/question/getAlllQuestions")
+    const handleChange = (e) => {
+        setNewQuestion(
+            {
+                ...newQuestion, 
+                [e.target.name]: e.target.value
+            }
+        )
+    }
     return (
         <div>
             <h1> דוגמא לשאלה </h1>
