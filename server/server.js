@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 const caseRouter = require("./routes/caseRouter");
 const postRouter = require("./routes/postRouter");
 const questionRouter = require("./routes/questionRouter");
-const userRouter = require("./routes/users.js");
+const userRouter = require("./routes/users");
 
 
 app.use("/case", caseRouter);

@@ -5,10 +5,11 @@ const Coins = () => {
       
     useEffect(()=>{
     // fetch to user and get coins for the spcific user
+
     })
 
     return (
-            <h2>{coins}</h2>
+        <h2>{coins}</h2>
     )
 }
 export default Coins;
