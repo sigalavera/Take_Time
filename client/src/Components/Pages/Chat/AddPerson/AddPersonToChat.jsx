@@ -21,13 +21,13 @@ const AddPersonToChat = () =>{
                 }
          }
      })
-     .then(res.json())
+     .then(res => res.json())
      .then(res => console.log(res))
     },[])
 
     return(
     <div>
-    <DM userName={} />
+    <DM userName="{}" />
    </div>
     )
 }

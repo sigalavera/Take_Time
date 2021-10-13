@@ -1,6 +1,31 @@
 import React, { useState } from "react";
+import { useHistory, useLocation } from "react-router-dom";
 import Pagination  from "../Pagination/Pagination";
+
+function useQuery() {
+    return new URLSearchParams(useLocation().search)
+}
+
 const ReadingQuestions = () => {
+    const query = useQuery()
+    const history = useHistory()
+    const page = query.get('page') || 1
+    const searchQuery = query.get('searchQuery')
+    const [search,setSearch]= useState('')
+
+    const searchQution =()=>{
+        if (search.trim()){
+            //fetch search qution
+        }else{
+            history.push('/InterviewQuestions')
+        }
+    }
+
+const handleKeyPress = (e)=>{
+    if (e.keyCode === 13){
+        searchQution()
+    }
+}
   const [questions, setQuestions] = useState([
     {
       q: "מצא את המספר שחוזר על עצמו הכי הרבה בתוך מערך",
@@ -30,6 +55,11 @@ const ReadingQuestions = () => {
   return (
     <div>
       <h1> שאלה לדוגמא </h1>
+      <div>
+          <input onKeyPress={handleKeyPress} vlaue={search} placeholder='Search' name='search' type="text" onChange={(e)=>setSearch(e.target.value)} />
+          <button onClick={searchQution} >Search</button>
+      </div>
+      
       <Pagination/>
       {questions.map((q) => (
         <div>
