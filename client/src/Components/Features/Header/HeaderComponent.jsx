@@ -12,11 +12,8 @@ const Header = () => {
     console.log(data);
     setUserName(data.result.email);
     setAvatar(data.result.imageUrl);
-
    }
-   else{
-     return
-   }
+  
   }
 
   useEffect(()=>{

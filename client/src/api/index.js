@@ -21,25 +21,25 @@ API.interceptors.request.use((req) => {
 //export const signIn = (userData) => API.post("/user/signin", userData);
 export const getAllCases = () => API.get("/case/getAllCases");
 
-export const signIn = async (userData) =>{
-  return await fetch(`http://localhost:5000/user/signin`,{
-    headers:{'Content-Type': 'application/json'},
-    method:'POST',
-    body:JSON.stringify(userData)
+export const signIn = async (userData) => {
+  return await fetch(`http://localhost:5000/user/signin`, {
+    headers: { 'Content-Type': 'application/json' },
+    method: 'POST',
+    body: JSON.stringify(userData)
   })
-  .then((res) => res.json())
-  .then((data) =>  console.log(data))
+    .then((res) => res.json())
+    .then((data) => console.log(data))
 
 }
-export const getPosts = async (page) =>{
+export const getPosts = async (page) => {
   return await fetch(`http://localhost:5000/question/getAlllQuestions?page=${page}`)
-  .then((res) => res.json())
-  .then((data) =>  data)
+    .then((res) => res.json())
+    .then((data) => data)
 
 }
-export const getStorePosts = async (page) =>{
+export const getStorePosts = async (page) => {
   return await fetch(`http://localhost:5000/post/getAllPosts?page=${page}`)
-  .then((res) => res.json())
-  .then((data) => data)
+    .then((res) => res.json())
+    .then((data) => data)
 
 }

@@ -38,10 +38,11 @@ import './store.css'
 //     )
 // }
 
-
+import { Link } from "react-router-dom";
 import PostPaginate from "../../Features/Pagination/PostPagination";
 import { useHistory, useLocation } from "react-router-dom";
 import { getStorePosts } from "../../../api";
+import DM from "../Chat/DirectChat/DM";
 
 function useQuery() {
     return new URLSearchParams(useLocation().search)
@@ -70,10 +71,9 @@ const handleKeyPress = (e)=>{
     }
 }
 
-
   useEffect(() => {
     getStorePosts(page).then(data => setProducts(data?.data))
-  
+
   }, [page])
 
 
@@ -86,12 +86,14 @@ const handleKeyPress = (e)=>{
          products.map((item)=>{
              return(
                  <div key={item._id}>
-                  <h1>{item.fullName}</h1>=
+                  <h1>{item.fullName}</h1>
                   <h3>{item.title}</h3>
                   <h5>{item.content}</h5>
                   <div className="features-container">
                   <button>rating</button>
-                  <button>Chat</button>
+                  <Link component={DM} to="/DM">
+                   Chat
+                  </Link>
                   </div>
                  </div>
              )
