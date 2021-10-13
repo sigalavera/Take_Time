@@ -9,7 +9,7 @@ const postSchema = joi.object({
     content: joi.string().required(),
     fullName: joi.string().required(),
     email: joi.string().required(),
-    createdAt: joi.date().required()
+    createdAt: joi.date().required().default(new Date())
 })
 
 const validPost = (postData) => {

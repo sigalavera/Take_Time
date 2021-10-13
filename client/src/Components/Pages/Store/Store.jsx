@@ -41,7 +41,7 @@ import './store.css'
 
 import PostPaginate from "../../Features/Pagination/PostPagination";
 import { useHistory, useLocation } from "react-router-dom";
-import { getStorePosts } from "../../../api";
+import { getAllUsers, getStorePosts } from "../../../api";
 import AddPost from "../../Features/addPost/AddPost";
 
 function useQuery() {
@@ -51,6 +51,7 @@ function useQuery() {
 const Store = () =>{
 
     const [products,setProducts] = useState([]);
+    const [users,setUsers] = useState([]);
     const query = useQuery()
     const history = useHistory()
     const page = query.get('page') || 1
@@ -74,11 +75,11 @@ const handleKeyPress = (e)=>{
 
   useEffect(() => {
     getStorePosts(page).then(data => setProducts(data?.data))
-  
+    getAllUsers().then(data => setUsers(data))
   }, [page])
 
 
-  console.log(products);
+  console.log(users);
 
     return(
      <div className="store-container">
