@@ -12,32 +12,22 @@ const Header = () => {
       console.log(data);
       setUserName(data.result.email);
       setAvatar(data.result.imageUrl);
-
+    } else {
+      return;
     }
-    else {
-      return
-    }
-  }
-
-  const hendelClick = () => {
-    localStorage.clear()
-  }
+  };
 
   useEffect(() => {
     getUserName();
-    
-  },[avatar])
+  }, [avatar]);
   return (
     <div className="continer">
-      <div className="btn-logout">
-        <button onClick={hendelClick}> LOGOUT </button>
-      </div>
       <NavBar />
       <div className="user-continer">
         <img src={avatar} alt="" />
         <h2>{userName}</h2>
         </div>
-        <Coins />
+      <Coins />
     </div>
   );
 };
