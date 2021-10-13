@@ -40,6 +40,7 @@ const AppRouter = () => {
             </Route>
             <Route exact path="/DM">
                 <DM />
+
                 <AddPersonToChat />
             </Route>
             
