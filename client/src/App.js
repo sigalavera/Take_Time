@@ -21,7 +21,7 @@ function App() {
       <div className="body-app">
         <Router>
           <Header />
-          {!user ? <Login /> : <AppRouter />}
+          {!user ? (<Login />) :( <AppRouter />)}
           <Footer />
         </Router>
       </div>
