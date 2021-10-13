@@ -53,3 +53,11 @@ export const createPost = async (post,email) => {
   .then((data) => data)
 
 }
+
+
+export const getAllUsers = async () =>{
+  return await fetch(`http://localhost:5000/user/getAllUsers`)
+  .then((res) => res.json())
+  .then((data) => data)
+
+}
