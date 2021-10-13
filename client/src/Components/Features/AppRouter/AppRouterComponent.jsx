@@ -15,31 +15,32 @@ import DM from "../../Pages/Chat/DirectChat/DM";
 const AppRouter = () => {
     return (
         <Switch>
-            <Route  path="/chat">
+            <Route exact path="/chat">
                 <ChatContainer />
             </Route>
-            <Route  path="/InterviewQuestions">
+            <Route exact path="/InterviewQuestions">
                 <InterviewQuestions />
             </Route>
-            <Route  path="/StudyContent">
+            <Route exact path="/StudyContent">
                 <StudyContent />
                 <Store />
             </Route>
-            <Route  path="/UserProfile">
+            <Route exact path="/UserProfile">
                 <UserProfile />
             </Route>
            
-            <Route  path="/Admin">
+            <Route exact path="/Admin">
                 <Admin />
             </Route> 
-            <Route path="/home">
+            <Route exact path="/home">
                 <Home />
             </Route>
             <Route exact path="/">
                 <Home />
             </Route>
-            <Route path="/DM">
-                {/* <DM /> */}
+            <Route exact path="/DM">
+                <DM />
+
                 <AddPersonToChat />
             </Route>
             

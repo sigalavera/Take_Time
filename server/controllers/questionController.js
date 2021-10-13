@@ -1,17 +1,7 @@
 const { validQuestion, questionModel } = require("../models/questionModel");
 
 const getAlllQuestions = async (req, res, next) => {
-  // try {
-  //     const questions = await questionModel.find({});
-  //     if (!questions) {
-  //         res.json({ message: "bad request" }).status(301)
-  //     }
-  //     res.json({ questions }).status(200);
-  // } catch (e) {
-  //     console.log(e);
 
-  //     res.json({ message: "Server error" }).status(500);
-  // }
   const { page } = req.query;
 
   try {
