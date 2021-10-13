@@ -8,12 +8,13 @@ function useQuery() {
 }
 
 const ReadingQuestions = () => {
-  const [showQuestion, setShowQuestion] = useState([]);
-  const query = useQuery()
-  const history = useHistory()
-  const page = query.get('page') || 1
-  const searchQuery = query.get('searchQuery')
-  const [search, setSearch] = useState('')
+    const [showAnswer,setShowAnswer] = useState('white')
+    const [showQuestion, setShowQuestion] = useState([]);
+    const query = useQuery()
+    const history = useHistory()
+    const page = query.get('page') || 1
+    const searchQuery = query.get('searchQuery')
+    const [search,setSearch]= useState('')
 
   const searchQution = () => {
     if (search.trim()) {
@@ -36,7 +37,13 @@ const ReadingQuestions = () => {
   }, [page])
 
   console.log(showQuestion);
-
+  const answerOnClick =()=>{
+    if(showAnswer==="white"){
+      setShowAnswer("black")
+    }else{
+      setShowAnswer("white")
+    }
+  }
   return (
     <div>
       <AddQuestion />
@@ -48,16 +55,18 @@ const ReadingQuestions = () => {
       <Pagination page={page} />
       {
         showQuestion?.map((item, key) => (
-          <div key={key}>
-            <div>
-              תאריך יצירה : {item.createdAt}
-              <br></br>
-              שאלה : {item.question}
-              <br></br>
-              תשובה : {item.answer}
-              <hr></hr>
+            <div onClick={answerOnClick} key={key}>
+              <div>
+              <p> שאלה : {item.question}</p> 
+                <br></br>
+              <p > תשובה : <span style={{color:showAnswer}}>{item.answer}</span> </p> 
+                <br></br>
+                <p>תאריך יצירה : {item.createdAt}</p>
+                
+                <hr></hr>
+              </div>
             </div>
-          </div>
+          
         ))
       }
     </div>
