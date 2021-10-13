@@ -1,5 +1,4 @@
 import { ChatEngine, getOrCreateChat } from "react-chat-engine";
-import ChatFeed from "./ChatFeed/ChatFeed";
 import "./chat.css";
 import { useState } from "react";
 

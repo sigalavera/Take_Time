@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router";
 import { getPosts } from "../../../api";
-  import Pagination  from "../Pagination/Pagination";
+import Pagination from "../Pagination/Pagination";
+import AddQuestion from "../AddQuestion/AddQuestionComponent";
 function useQuery() {
-    return new URLSearchParams(useLocation().search)
+  return new URLSearchParams(useLocation().search)
 }
-
-
 
 const ReadingQuestions = () => {
     const [showAnswer,setShowAnswer] = useState('white')
@@ -17,24 +16,24 @@ const ReadingQuestions = () => {
     const searchQuery = query.get('searchQuery')
     const [search,setSearch]= useState('')
 
-    const searchQution =()=>{
-        if (search.trim()){
-            //fetch search qution
-        }else{
-            history.push('/InterviewQuestions')
-        }
+  const searchQution = () => {
+    if (search.trim()) {
+      //fetch search qution
+    } else {
+      history.push('/InterviewQuestions')
     }
+  }
 
-const handleKeyPress = (e)=>{
-    if (e.keyCode === 13){
-        searchQution()
+  const handleKeyPress = (e) => {
+    if (e.keyCode === 13) {
+      searchQution()
     }
-}
+  }
 
 
   useEffect(() => {
     getPosts(page).then(data => setShowQuestion(data?.data))
-  
+
   }, [page])
 
   console.log(showQuestion);
@@ -47,12 +46,13 @@ const handleKeyPress = (e)=>{
   }
   return (
     <div>
-        <div>
-          <input onKeyPress={handleKeyPress} vlaue={search} placeholder='Search' name='search' type="text" onChange={(e)=>setSearch(e.target.value)} />
-          <button onClick={searchQution} >Search</button>
+      <AddQuestion />
+      <div>
+        <input onKeyPress={handleKeyPress} vlaue={search} placeholder='Search' name='search' type="text" onChange={(e) => setSearch(e.target.value)} />
+        <button onClick={searchQution} >Search</button>
       </div>
-     
- <Pagination page={page} />
+
+      <Pagination page={page} />
       {
         showQuestion?.map((item, key) => (
             <div onClick={answerOnClick} key={key}>
@@ -66,7 +66,7 @@ const handleKeyPress = (e)=>{
                 <hr></hr>
               </div>
             </div>
-          
+          </div>
         ))
       }
     </div>
