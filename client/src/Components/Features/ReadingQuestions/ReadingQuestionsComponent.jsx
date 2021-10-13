@@ -51,7 +51,7 @@ const handleKeyPress = (e)=>{
             <div key={key}>
               <div>
                 תאריך יצירה : {item.createdAt}
-                <br></br>
+                <br></br>]
                 שאלה : {item.question}
                 <br></br>
                 תשובה : {item.answer}
