@@ -5,9 +5,10 @@ dotenv.config();
 const User = require("../models/user.js");
 
 const signin = async (req, res) => {
-  console.log(req.body.data.result);
+  const { googleId, imageUrl, email, name, givenName, familyName } =
+    req.body.data.result;
   try {
-    res.status(200).json({ result,  token });
+    res.status(200).json({ result, token });
   } catch (error) {
     res.status(500).json({ message: "Something went worng" });
   }

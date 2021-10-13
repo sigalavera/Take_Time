@@ -17,6 +17,7 @@ const Login = () => {
   const googleSuccess = async (res) => {
     const result = res?.profileObj;
     const token = res?.tokenId;
+    localStorage.setItem("userProfile", JSON.stringify({ result, token } ));
 
     try {
       signIn({ data: { result, token } });

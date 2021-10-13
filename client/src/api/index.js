@@ -28,7 +28,7 @@ export const signIn = async (userData) =>{
     body:JSON.stringify(userData)
   })
   .then((res) => res.json())
-  .then((data) =>  console.log(data))
+  .then((data) =>  data)
 
 }
 export const getPosts = async (page) =>{
