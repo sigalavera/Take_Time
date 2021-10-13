@@ -1,13 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
+import { useHistory } from "react-router";
+
 
 const NavBar = () => {
-    
+    const history = useHistory();
+    const hendelClick = () => {
+        localStorage.clear()
+        history.push("/")
+    }
     return (
         <div className="continer-nav-link">
             <nav className="link-bar">
-                
+
                 <ul>
                     <li>
                         <Link to="/"> </Link>

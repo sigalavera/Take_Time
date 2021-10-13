@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getAllUsers } from "../../../api";
 
 const UserProfile = () => {
-    const user = JSON.parse(localStorage.getItem("userProfile"));
+    const [users, setUsers] = useState([]);
+    // const user = JSON.parse(localStorage.getItem("userProfile")).result;
+
+    useEffect(() => {
+        getAllUsers()
+        .then(res => setUsers(res))
+    }, [])
+
+    console.log(users);
     return (
-        <div>
-            <div>{user?.result?.imageUrl?(<h1>{user?.result?.name.charAt(0)}</h1>):<img src={user?.result?.imageUrl} alt="" />}</div>
-            <div>{user?.result?.name}</div>
-            <div>{user?.result?.email}</div>
-            
-            
-        
-        </div>
+        users.map((item, key) => {
+            return (
+                <div key={key}>
+                    <h3> {item?.name}</h3>
+                    <h3>{item?.email}</h3>
+                </div>
+            )
+        })
     )
 }
 export default UserProfile;

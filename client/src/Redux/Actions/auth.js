@@ -30,7 +30,7 @@ export const signin = (userData, history) => async (dispatch) => {
         console.log(error);
       });
 
-    history.push("/home");
+    history.push("/");
   } catch (error) {
     console.log(error);
   }
