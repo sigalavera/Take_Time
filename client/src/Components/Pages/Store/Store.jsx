@@ -38,11 +38,11 @@ import './store.css'
 //     )
 // }
 
-import { Link } from "react-router-dom";
+
 import PostPaginate from "../../Features/Pagination/PostPagination";
 import { useHistory, useLocation } from "react-router-dom";
-import { getStorePosts } from "../../../api";
-import DM from "../Chat/DirectChat/DM";
+import { getAllUsers, getStorePosts } from "../../../api";
+import AddPost from "../../Features/addPost/AddPost";
 
 function useQuery() {
     return new URLSearchParams(useLocation().search)
@@ -51,6 +51,7 @@ function useQuery() {
 const Store = () =>{
 
     const [products,setProducts] = useState([]);
+    const [users,setUsers] = useState([]);
     const query = useQuery()
     const history = useHistory()
     const page = query.get('page') || 1
@@ -71,29 +72,29 @@ const handleKeyPress = (e)=>{
     }
 }
 
+
   useEffect(() => {
     getStorePosts(page).then(data => setProducts(data?.data))
-
+    getAllUsers().then(data => setUsers(data))
   }, [page])
 
 
-  console.log(products);
+  console.log(users);
 
     return(
      <div className="store-container">
+         <AddPost />
          <PostPaginate page={page}/>
      {
          products.map((item)=>{
              return(
                  <div key={item._id}>
-                  <h1>{item.fullName}</h1>
+                  <h1>{item.fullName}</h1>=
                   <h3>{item.title}</h3>
                   <h5>{item.content}</h5>
                   <div className="features-container">
-                  <button>Rating</button>
-                  <Link component={DM} to="/DM">
-                   Chat
-                  </Link>
+                  <button>rating</button>
+                  <button>Chat</button>
                   </div>
                  </div>
              )
