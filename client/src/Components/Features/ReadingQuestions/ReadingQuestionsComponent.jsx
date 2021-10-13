@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router";
+import { getPosts } from "../../../api";
+  import Pagination  from "../Pagination/Pagination";
 function useQuery() {
     return new URLSearchParams(useLocation().search)
 }
@@ -30,10 +32,9 @@ const handleKeyPress = (e)=>{
 
 
   useEffect(() => {
-    fetch("http://localhost:5000/question/getAlllQuestions")
-      .then((res) => res.json())
-      .then((data) => setShowQuestion(data.questions))
-  }, [])
+    getPosts(page).then(data => setShowQuestion(data?.data))
+  
+  }, [page])
 
   console.log(showQuestion);
 
@@ -43,9 +44,10 @@ const handleKeyPress = (e)=>{
           <input onKeyPress={handleKeyPress} vlaue={search} placeholder='Search' name='search' type="text" onChange={(e)=>setSearch(e.target.value)} />
           <button onClick={searchQution} >Search</button>
       </div>
+     
+ <Pagination page={page} />
       {
-        showQuestion?.map((item, key) => {
-          return (
+        showQuestion?.map((item, key) => (
             <div key={key}>
               <div>
                 שאלה : {item.question}
@@ -56,8 +58,8 @@ const handleKeyPress = (e)=>{
                 <hr></hr>
               </div>
             </div>
-          )
-        })
+          
+        ))
       }
     </div>
   )
