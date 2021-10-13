@@ -28,3 +28,9 @@ export const getPosts = async (page) =>{
   .then((data) =>  data)
 
 }
+export const getStorePosts = async (page) =>{
+  return await fetch(`http://localhost:5000/post/getAllPosts?page=${page}`)
+  .then((res) => res.json())
+  .then((data) => data)
+
+}
