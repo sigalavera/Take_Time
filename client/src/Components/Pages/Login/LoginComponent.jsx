@@ -24,7 +24,7 @@ const Login = () => {
       console.log(res);
       
       
-      history.push("/home");
+      history.push("/");
     } catch (error) {
       console.log(error);
     }
