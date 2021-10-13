@@ -4,8 +4,12 @@ const API = axios.create({
 });
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("userProfile")) {
+<<<<<<< HEAD
     req.headers.Authorization = `Bearer ${
       JSON.parse(localStorage.getItem("userProfile")).token
+=======
+    req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem("userProfile")).token
+>>>>>>> main
       }`;
   }
   return req;
@@ -37,9 +41,10 @@ export const getPosts = async (page) => {
     .then((data) => data);
 };
 export const getStorePosts = async (page) => {
-  return await fetch(`http://localhost:5000/post/getAllPosts?page=${page}`)
+  return await fetch(`http://localhost:5000/post/getAllPosts`)
     .then((res) => res.json())
-    .then((data) => data);
+    .then((data) => data)
+    .catch(err => console.log(err))
 };
 export const createPost = async (post, email) => {
   return await fetch(`http://localhost:5000/post/createPost`, {

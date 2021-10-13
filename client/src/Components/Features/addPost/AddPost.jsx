@@ -22,7 +22,7 @@ const AddPost = () => {
       comments: "",
       content: "",
       fullName: "",
-      email: `${user?.result.email}`,
+      email: `${user?.result?.email}`,
     });
   };
 

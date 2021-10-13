@@ -14,7 +14,7 @@ const getAllPosts = async (req, res, next) => {
   const { page } = req.query;
 
   try {
-    const LIMIT = 3;
+    const LIMIT = 2;
     const startIndex = (Number(page) - 1) * LIMIT; //get the starting index of every page
     const total = await postModel.countDocuments({});
 
