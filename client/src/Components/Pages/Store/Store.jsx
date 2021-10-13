@@ -73,8 +73,9 @@ const Store = () => {
   };
 
   useEffect(() => {
+
     getStorePosts(page).then((data) => setProducts(data?.data));
-    getAllUsers().then((data) => setUsers(data));
+    // getAllUsers().then((data) => setUsers(data));
   }, [page]);
 
   console.log(users);
@@ -94,15 +95,15 @@ const Store = () => {
         <AddPost />
         <PostPaginate page={page} />
         {
-            products.map((item) => {
+            products?.map((item) => {
                 return (
                     <div key={item._id}>
                         <div className="user">
-                            <h1>{item.fullName}</h1>
+                            <h1>{item?.fullName}</h1>
                     </div>
                         <div className="info">
-                            <h3>{item.title}</h3>
-                            <h5>{item.content}</h5>
+                            <h3>{item?.title}</h3>
+                            <h5>{item?.content}</h5>
                         </div>
                         <div className="features-container">
                             <button>rating</button>
