@@ -66,7 +66,7 @@ const ReadingQuestions = () => {
                 <hr></hr>
               </div>
             </div>
-          </div>
+          
         ))
       }
     </div>
