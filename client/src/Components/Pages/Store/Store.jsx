@@ -61,8 +61,10 @@ const Store = () => {
       //fetch search qution
     } else {
       history.push("/InterviewQuestions");
+
     }
   };
+
 
   const handleKeyPress = (e) => {
     if (e.keyCode === 13) {
