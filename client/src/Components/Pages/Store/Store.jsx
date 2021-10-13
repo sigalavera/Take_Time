@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./store.css";
+import { Link } from "react-router-dom";
+import './store.css'
 
 // const Store = () => {
 //     const [products, setProducts] = useState([]);
@@ -73,6 +74,8 @@ const Store = () => {
   };
 
   useEffect(() => {
+    getStorePosts(page).then((data) => setProducts(data.data));
+    getAllUsers().then((data) => setUsers(data));
 
     getStorePosts(page).then((data) => setProducts(data?.data));
     // getAllUsers().then((data) => setUsers(data));
@@ -92,6 +95,22 @@ const Store = () => {
         </div>
     </div>
     <div className="store-container">
+      <AddPost />
+      <PostPaginate page={page} />
+      {products.map((item,index) => {
+        return (
+          <div key={item._id}>
+              <img src={users.users[index].imageUrl} alt="" />
+            <h1>{users.users[index].name}</h1>
+            <h3>{item.title}</h3>
+            <h5>{item.content}</h5>
+            <div className="features-container">
+              <button>rating</button>
+              <button>Chat</button>
+            </div>
+          </div>
+        );
+      })}
         <AddPost />
         <PostPaginate page={page} />
         {
