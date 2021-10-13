@@ -29,6 +29,9 @@ const signin = async (req, res) => {
 const getAllUsers = async (req, res) => {
   try {
     const users = await User.find({});
+    if (!users) {
+      res.json({ message: "no users" }).status(200)
+    }
     res.json({ users }).status(200);
   } catch (e) {
     res.json({ message: "err" }).status(500);
