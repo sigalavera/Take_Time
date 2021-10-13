@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="body-footer">
             <p>
                 FOOTER
-        </p>
+            </p>
         </div>
     )
 }
