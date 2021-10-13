@@ -43,12 +43,20 @@ export const getStorePosts = async (page) =>{
   .then((data) => data)
 
 }
-export const createPost = async (post,email) => {
+export const createPost = async (post,email) =>{
   return await fetch(`http://localhost:5000/post/createPost`,{
     headers:{'Content-Type': 'application/json'},
     method:'POST',
     body:JSON.stringify({post,email})
   })
+  .then((res) => res.json())
+  .then((data) => data)
+
+}
+
+
+export const getAllUsers = async () =>{
+  return await fetch(`http://localhost:5000/user/getAllUsers`)
   .then((res) => res.json())
   .then((data) => data)
 
