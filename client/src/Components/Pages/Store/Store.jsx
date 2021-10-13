@@ -71,7 +71,7 @@ const Store = () => {
   };
 
   useEffect(() => {
-    getStorePosts(page).then((data) => setProducts(data?.data));
+    getStorePosts(page).then((data) => setProducts(data.data));
     getAllUsers().then((data) => setUsers(data));
   }, [page]);
 
