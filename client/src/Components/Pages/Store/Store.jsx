@@ -90,7 +90,7 @@ const handleKeyPress = (e)=>{
                   <h3>{item.title}</h3>
                   <h5>{item.content}</h5>
                   <div className="features-container">
-                  <button>rating</button>
+                  <button>Rating</button>
                   <Link component={DM} to="/DM">
                    Chat
                   </Link>

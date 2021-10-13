@@ -43,8 +43,10 @@ const getAllPosts = async (req, res, next) => {
 };
 
 const createPost = async (req, res, next) => {
+  const {post} = req.body;
     try {
-        const newPost = await postModel.insertMany(req.body);
+        const newPost = await postModel.insertMany(post);
+     
         const { error } = validPost(req.body);
         if (error) {
             res.json({ error }).status(301);

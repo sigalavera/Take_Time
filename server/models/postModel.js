@@ -8,7 +8,8 @@ const postSchema = joi.object({
     comments: joi.string().required(),
     content: joi.string().required(),
     fullName: joi.string().required(),
-    createdAt: joi.date().required()
+    email: joi.string().required(),
+    createdAt: joi.date().required().default(new Date())
 })
 
 const validPost = (postData) => {
