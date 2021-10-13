@@ -14,7 +14,6 @@ const NavBar = () => {
         <div className="continer-nav-link">
             <nav className="link-bar">
 
-                <button onClick={ hendelClick}> LOGOUT </button>
                 <ul>
                     <li>
                         <Link to="/"> </Link>
