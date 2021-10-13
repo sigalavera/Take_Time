@@ -39,7 +39,7 @@ const AppRouter = () => {
                 <Home />
             </Route>
             <Route path="/DM">
-                <DM />
+                {/* <DM /> */}
                 <AddPersonToChat />
             </Route>
             
