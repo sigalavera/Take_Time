@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Pagination  from "../Pagination/Pagination";
 const ReadingQuestions = () => {
   const [questions, setQuestions] = useState([
     {
@@ -30,6 +30,7 @@ const ReadingQuestions = () => {
   return (
     <div>
       <h1> שאלה לדוגמא </h1>
+      <Pagination/>
       {questions.map((q) => (
         <div>
           <p>{q.q}</p>
