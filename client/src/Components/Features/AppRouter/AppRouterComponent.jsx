@@ -9,43 +9,42 @@ import Store from "../../Pages/Store/Store";
 import AddPersonToChat from "../../Pages/Chat/AddPerson/AddPersonToChat";
 import DM from "../../Pages/Chat/DirectChat/DM";
 
-
 const AppRouter = () => {
-    return (
-        <Switch>
-            <Route exact path="/chat">
-                <ChatContainer />
-            </Route>
+  return (
+    <Switch>
+      <Route exact path="/chat">
+        <ChatContainer />
+      </Route>
 
-            <Route exact path="/InterviewQuestions">
-                <InterviewQuestions />
-            </Route>
+      <Route exact path="/InterviewQuestions">
+        <InterviewQuestions />
+      </Route>
 
-            <Route exact path="/Store">
-                <Store />
-            </Route>
+      <Route exact path="/Store">
+        <Store />
+      </Route>
 
-            <Route exact path="/UserProfile">
-                <UserProfile />
-            </Route>
+      <Route exact path="/UserProfile">
+        <UserProfile />
+      </Route>
 
-            <Route exact path="/Admin">
-                <Admin />
-            </Route>
+      <Route exact path="/Admin">
+        <Admin />
+      </Route>
 
-            <Route exact path="/DM">
-                <DM />
-                <AddPersonToChat />
-            </Route>
+      <Route exact path="/DM">
+        <DM />
+        <AddPersonToChat />
+      </Route>
 
-            <Route exact path="/home">
-                <Home />
-            </Route>
+      <Route exact path="/home">
+        <Home />
+      </Route>
 
-            <Route exact path="/">
-                <Home />
-            </Route>
-        </Switch>
-    )
-}
+      <Route exact path="/">
+        <Home />
+      </Route>
+    </Switch>
+  );
+};
 export default AppRouter;
