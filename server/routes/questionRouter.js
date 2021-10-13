@@ -7,8 +7,13 @@ const questionController = require("../controllers/questionController");
 questionRouter.get("/getAlllQuestions", questionController.getAlllQuestions);
 
 // @ POST request create case.
+<<<<<<< HEAD
 // @ URL http://localhost:5000/question/createCase
 questionRouter.post("/createCase", questionController.createQuestion);
+=======
+// @ URL http://localhost:5000/question/createQuestion
+questionRouter.post("/createQuestion", questionController.createQuestion);
+>>>>>>> main
 
 // // @ PUT request create case.
 // // @ URL http://localhost:5000/case/updateCase

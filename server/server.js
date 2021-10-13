@@ -15,13 +15,21 @@ app.use(express.urlencoded({ extended: true }));
 const caseRouter = require("./routes/caseRouter");
 const postRouter = require("./routes/postRouter");
 const questionRouter = require("./routes/questionRouter");
+<<<<<<< HEAD
 
+=======
+const userRouter = require("./routes/users.js");
+>>>>>>> main
 
 
 app.use("/case", caseRouter);
 app.use("/post", postRouter);
 app.use("/question", questionRouter);
+<<<<<<< HEAD
 
+=======
+app.use("/user", userRouter);
+>>>>>>> main
 
 app.get("/", (req, res) => {
     res.send("Server is up");

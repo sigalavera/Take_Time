@@ -1,24 +1,23 @@
 import React from "react";
 import { useHistory } from 'react-router-dom';
-import InterviewQuestions from "../InterviewQuestions/InterviewQuestionsComponent";
-import StudyContent from "../StudyContent/StudyContentComponent";
 import "./home.css";
 
 const Home = () => {
     const history = useHistory();
     const InterviewQuestions = () => history.push('/InterviewQuestions');
-    const StudyContent = () => history.push('/StudyContent');
+    const Store = () => history.push('/Store');
     
     return (
         <div className="continer-home">
             <div className="continer-class">
+                <h1>Take Time .</h1>
              </div> 
              <div className="btn-home"> 
             <button onClick={InterviewQuestions}>
                 שאלות ראיון
             </button>
 
-            <button onClick={StudyContent}>
+            <button onClick={Store}>
                 עזרה לימודית
             </button>
             </div> 

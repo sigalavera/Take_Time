@@ -3,14 +3,11 @@ import { Link } from "react-router-dom";
 import "./navbar.css";
 
 const NavBar = () => {
-    const hendelClick = () => {
-        localStorage.clear()
-    }
+    
     return (
         <div className="continer-nav-link">
             <nav className="link-bar">
-
-                <button onClick={ hendelClick }> LOGOUT </button>
+                
                 <ul>
                     <li>
                         <Link to="/"> </Link>

@@ -8,12 +8,12 @@ import Login from "./Components/Pages/Login/LoginComponent";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [user,setUser] = useState()
+  const [user, setUser] = useState()
 
   const history = useHistory();
 
   useEffect(() => {
-   setUser(localStorage.getItem("userProfile"))
+    setUser(localStorage.getItem("userProfile"))
   }, [history])
 
   return (
@@ -22,8 +22,8 @@ function App() {
         <Router>
           <Header />
           {!user ? <Login /> : <AppRouter />}
+          <Footer />
         </Router>
-        <Footer />
       </div>
     </div>
   );

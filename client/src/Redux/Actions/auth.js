@@ -4,14 +4,15 @@ import axios from "axios";
 
 export const signin = (userData, history) => async (dispatch) => {
   try {
+     
     const { data } = await api.signIn(userData);
     dispatch({ type: AUTH, data: data });
     let chatData = `{
-        "username": "${data.name}",
-        "secret": "${data.googleId}",
-        "email": "${data.email}",
-        "first_name": "${data.givenName}",
-        "last_name": "${data.familyName}"
+        "username": "${data.result.name}",
+        "secret": "${data.result.googleId}",
+        "email": "${data.result.email}",
+        "first_name": "${data.result.givenName}",
+        "last_name": "${data.result.familyName}"
           }`;
     console.log(data);
     let config = {
@@ -29,7 +30,7 @@ export const signin = (userData, history) => async (dispatch) => {
         console.log(error);
       });
 
-    history.push("/");
+    history.push("/home");
   } catch (error) {
     console.log(error);
   }
