@@ -18,11 +18,11 @@ const ReadingQuestions = () => {
           return (
             <div key={key}>
               <div>
+                תאריך יצירה : {item.createdAt}
+                <br></br>
                 שאלה : {item.question}
                 <br></br>
                 תשובה : {item.answer}
-                <br></br>
-                תאריך יצירה : {item.createdAt}
                 <hr></hr>
               </div>
             </div>
