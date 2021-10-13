@@ -8,6 +8,7 @@ const postSchema = joi.object({
     comments: joi.string().required(),
     content: joi.string().required(),
     fullName: joi.string().required(),
+    email: joi.string().required(),
     createdAt: joi.date().required()
 })
 

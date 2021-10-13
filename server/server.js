@@ -16,9 +16,13 @@ const caseRouter = require("./routes/caseRouter");
 const postRouter = require("./routes/postRouter");
 const questionRouter = require("./routes/questionRouter");
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 const userRouter = require("./routes/users.js");
+>>>>>>> main
+=======
+const userRouter = require("./routes/users");
 >>>>>>> main
 
 

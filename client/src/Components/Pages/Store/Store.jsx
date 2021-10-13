@@ -42,6 +42,7 @@ import './store.css'
 import PostPaginate from "../../Features/Pagination/PostPagination";
 import { useHistory, useLocation } from "react-router-dom";
 import { getStorePosts } from "../../../api";
+import AddPost from "../../Features/addPost/AddPost";
 
 function useQuery() {
     return new URLSearchParams(useLocation().search)
@@ -91,6 +92,7 @@ const Store = () => {
                 </div>
             </div>
             <div className="store-container">
+                <AddPost />
                 <PostPaginate page={page} />
                 {
                     products.map((item) => {

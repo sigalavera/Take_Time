@@ -22,7 +22,7 @@ const NavBar = () => {
                         <Link to="/InterviewQuestions">Interview Questions</Link>
                     </li>
                     <li>
-                        <Link to="/StudyContent">Study Content</Link>
+                        <Link to="/Store">Study Content</Link>
                     </li>
                 </ul>
             </nav>
