@@ -8,8 +8,33 @@
 
 }
 
-
 .link-bar ul li{
     font-size: 18px;
 }
 
+.user-continer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* border: 1px solid black; */
+    width: 230px;
+    height: 40px; 
+}
+.user-continer img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.user-continer h2{
+    
+    font-size: 13px;
+}
+.btn-logout button{
+    width: 85px;
+    height: 35px;
+    background-color: #000000;
+    border: none;
+    border-radius: 22px;
+    color: #ffffff;
+
+}

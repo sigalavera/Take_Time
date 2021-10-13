@@ -16,16 +16,22 @@ const Header = () => {
       return;
     }
   };
+  const hendelClick = () => {
+    localStorage.clear();
+  };
 
   useEffect(() => {
     getUserName();
   }, [avatar]);
   return (
     <div className="continer">
+      <div className="btn-logout">
+        <button onClick={hendelClick}> LOGOUT </button>
+      </div>
       <NavBar />
-      <div>
+      <div className="user-continer">
         <img src={avatar} alt="" />
-        <h1>{userName}</h1>
+        <h2>{userName}</h2>
       </div>
       <Coins />
     </div>

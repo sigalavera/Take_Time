@@ -61,8 +61,10 @@ const Store = () => {
       //fetch search qution
     } else {
       history.push("/InterviewQuestions");
+
     }
   };
+
 
   const handleKeyPress = (e) => {
     if (e.keyCode === 13) {
@@ -71,29 +73,48 @@ const Store = () => {
   };
 
   useEffect(() => {
+
     getStorePosts(page).then((data) => setProducts(data?.data));
-    getAllUsers().then((data) => setUsers(data));
+    // getAllUsers().then((data) => setUsers(data));
   }, [page]);
 
   console.log(users);
 
   return (
-    <div className="store-container">
-      <AddPost />
-      <PostPaginate page={page} />
-      {products.map((item) => {
-        return (
-          <div key={item._id}>
-            <h1>{item.fullName}</h1>=<h3>{item.title}</h3>
-            <h5>{item.content}</h5>
-            <div className="features-container">
-              <button>rating</button>
-              <button>Chat</button>
-            </div>
-          </div>
-        );
-      })}
+    <div className="body-store">
+    <div className="search">
+        <div className="title-store">
+            <h1>Store</h1>
+        </div>
+        <div>
+            <input type="text" placeholder="Type to search" />
+            <label> חיפוש </label>
+        </div>
     </div>
+    <div className="store-container">
+        <AddPost />
+        <PostPaginate page={page} />
+        {
+            products?.map((item) => {
+                return (
+                    <div key={item._id}>
+                        <div className="user">
+                            <h1>{item?.fullName}</h1>
+                    </div>
+                        <div className="info">
+                            <h3>{item?.title}</h3>
+                            <h5>{item?.content}</h5>
+                        </div>
+                        <div className="features-container">
+                            <button>rating</button>
+                            <button>Chat</button>
+                        </div>
+                    </div>
+                )
+            })
+        }
+    </div>
+</div>
   );
 };
 export default Store;

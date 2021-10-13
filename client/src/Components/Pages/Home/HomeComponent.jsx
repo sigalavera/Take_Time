@@ -9,10 +9,19 @@ const Home = () => {
 
   return (
     <div className="continer-home">
-      <button onClick={InterviewQuestions}>שאלות ראיון</button>
+            <div className="continer-class">
+                <h1>Take Time .</h1>
+             </div> 
+             <div className="btn-home"> 
+            <button onClick={InterviewQuestions}>
+                שאלות ראיון
+            </button>
 
-      <button onClick={Store}>עזרה לימודית</button>
-    </div>
+            <button onClick={Store}>
+                עזרה לימודית
+            </button>
+            </div> 
+        </div>
   );
 };
 export default Home;
