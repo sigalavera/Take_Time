@@ -30,6 +30,16 @@ const signin = async (req, res) => {
   }
 };
 
+const getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find({});
+    res.json({ users }).status(200);
+
+  } catch (e) {
+    res.json({ message: "err" }).status(500);
+  };
+}
 module.exports = {
-  signin
+  signin,
+  getAllUsers
 }
