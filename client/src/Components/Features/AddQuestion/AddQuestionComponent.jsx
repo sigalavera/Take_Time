@@ -8,7 +8,7 @@ const AddQuestion = () => {
     })
 
     fetch("http://localhost:5000/question/getAlllQuestions")
-    handleChange = (e) => {
+    const handleChange = (e) => {
         setNewQuestion(
             {
                 ...newQuestion, 

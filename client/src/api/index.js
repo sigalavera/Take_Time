@@ -20,3 +20,11 @@ API.interceptors.request.use((req) => {
 
 export const signIn = (userData) => API.post("/user/signin", userData);
 export const getAllCases = () => API.get("/case/getAllCases");
+
+
+export const getPosts = async (page) =>{
+  return await fetch(`http://localhost:5000/question/getAlllQuestions?page=${page}`)
+  .then((res) => res.json())
+  .then((data) =>  data)
+
+}
