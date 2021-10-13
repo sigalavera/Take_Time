@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
-import './store.css'
+import './store.css';
+
+
+
 const Store = () => {
     const [products, setProducts] = useState([]);
 
@@ -11,7 +14,18 @@ const Store = () => {
     console.log(products);
 
     return (
+        <div className="body-store">
+            <div className="search">
+                <div className="title-store">
+                    <h1>Store</h1>
+                </div>
+                <div>
+            <input type="text" placeholder="Type to search" />
+            <label> חיפוש </label>
+            </div>
+        </div>
         <div className="store-container">
+            
             {
                 products.map((item) => {
                     return (
@@ -32,7 +46,7 @@ const Store = () => {
                     )
                 })
             }
-
+            </div>
         </div>
     )
 }
