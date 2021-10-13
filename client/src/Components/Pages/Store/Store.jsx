@@ -40,7 +40,7 @@ import './store.css'
 
 
 import PostPaginate from "../../Features/Pagination/PostPagination";
-import { useHistory, useLocation } from "react-router";
+import { useHistory, useLocation } from "react-router-dom";
 import { getStorePosts } from "../../../api";
 
 function useQuery() {

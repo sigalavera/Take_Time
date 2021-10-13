@@ -18,10 +18,19 @@ API.interceptors.request.use((req) => {
 // axios example 
 //export const fetchPosts = () => API.get("/posts");
 
-export const signIn = (userData) => API.post("/user/signin", userData);
+//export const signIn = (userData) => API.post("/user/signin", userData);
 export const getAllCases = () => API.get("/case/getAllCases");
 
+export const signIn = async (userData) =>{
+  return await fetch(`http://localhost:5000/user/signin`,{
+    headers:{'Content-Type': 'application/json'},
+    method:'POST',
+    body:JSON.stringify(userData)
+  })
+  .then((res) => res.json())
+  .then((data) =>  console.log(data))
 
+}
 export const getPosts = async (page) =>{
   return await fetch(`http://localhost:5000/question/getAlllQuestions?page=${page}`)
   .then((res) => res.json())
