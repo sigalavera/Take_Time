@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import "./login.css";
 import { AUTH } from "../../../Redux/Actions/types";
+import { signIn } from "../../../api";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const Login = () => {
     const token = res?.tokenId;
 
     try {
-      dispatch({ type: AUTH, data: { result, token } });
+      signIn({ data: { result, token } });
       console.log(res);
       
       
