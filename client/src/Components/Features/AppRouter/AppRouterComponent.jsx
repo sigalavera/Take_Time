@@ -1,10 +1,8 @@
 import React from "react";
-import {Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Home from "../../Pages/Home/HomeComponent";
 import ChatContainer from "../../Pages/Chat/ChatContainer";
 import InterviewQuestions from "../../Pages/InterviewQuestions/InterviewQuestionsComponent";
-import Login from "../../Pages/Login/LoginComponent";
-import StudyContent from "../../Pages/StudyContent/StudyContentComponent";
 import UserProfile from "../../Pages/UserProfile/UserProfileComponent";
 import Admin from "../../Pages/Admin/Admin";
 import Store from "../../Pages/Store/Store";
@@ -15,37 +13,38 @@ import DM from "../../Pages/Chat/DirectChat/DM";
 const AppRouter = () => {
     return (
         <Switch>
-            <Route  path="/chat">
+            <Route path="/chat">
                 <ChatContainer />
             </Route>
-            <Route  path="/InterviewQuestions">
+
+            <Route path="/InterviewQuestions">
                 <InterviewQuestions />
             </Route>
-            <Route  path="/StudyContent">
-                <StudyContent />
+
+            <Route path="/Store">
                 <Store />
             </Route>
-            <Route  path="/UserProfile">
+
+            <Route path="/UserProfile">
                 <UserProfile />
             </Route>
-           
-            <Route  path="/Admin">
+
+            <Route path="/Admin">
                 <Admin />
-            </Route> 
-            <Route path="/home">
-                <Home />
             </Route>
-            <Route exact path="/">
-                <Home />
-            </Route>
+
             <Route path="/DM">
                 <DM />
                 <AddPersonToChat />
             </Route>
-            
-            {/* <Route path="/">
-                <Login />
-            </Route> */}
+
+            <Route path="/home">
+                <Home />
+            </Route>
+
+            <Route exact path="/">
+                <Home />
+            </Route>
         </Switch>
     )
 }
