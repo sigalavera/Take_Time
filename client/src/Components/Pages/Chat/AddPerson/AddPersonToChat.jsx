@@ -13,8 +13,7 @@ const AddPersonToChat = () =>{
 const setNewUser = () =>{
     myHeaders.append("PRIVATE-KEY", "10c0a59f-982c-4535-8ca2-a6d95dfc9598");
     myHeaders.append('Content-Type', 'application/json');
-
-    
+    myHeaders.append("Project-ID", "654ce782-8e95-433a-b3d6-11e63df52204")
 }
 
 const getUserFromBroswer = () =>{
@@ -22,9 +21,9 @@ const getUserFromBroswer = () =>{
     const {result} = JSON.parse(localStorageResult);
     console.log(result);
     setUser({
-    username: 'Shlomo1',
-    first_name:  'Shlomo11',
-    secret: 'Shlomo1'
+    username: result.email,
+    first_name:  result.name,
+    secret: result.email
     })
     setNewUser();
 }
