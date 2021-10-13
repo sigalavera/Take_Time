@@ -11,6 +11,7 @@ const getAllPosts = async (req, res, next) => {
         console.log(e);
         res.json({ message: "Server error" }).status(500);
     }
+   
 };
 
 const createPost = async (req, res, next) => {
