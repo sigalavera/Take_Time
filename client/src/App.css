@@ -1,7 +1,7 @@
 .App {
   background-color:  #1A1A1A;
   width: 100vw;
-  height: 100vh;
+  height: 125vh;
   display: flex;
   justify-content: center;
   
@@ -11,7 +11,7 @@ font-family: 'Montserrat', sans-serif;
 .body-app{
   background-color: #fff;
   width: 80%;
-  height: 100vh;
+  height: 125vh;
 }
 
 .App-logo {

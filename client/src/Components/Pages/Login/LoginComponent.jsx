@@ -17,30 +17,31 @@ const Login = () => {
   const googleSuccess = async (res) => {
     const result = res?.profileObj;
     const token = res?.tokenId;
-    localStorage.setItem("userProfile", JSON.stringify({ result, token } ));
+    localStorage.setItem("userProfile", JSON.stringify({ result, token }));
 
     try {
       signIn({ data: { result, token } });
       console.log(res);
       
-      
       history.push("/");
     } catch (error) {
       console.log(error);
     }
-
   };
   return (
     <div className="body-log">
       <div className="title-log">
         <h1> Take Time </h1>
-        <p>אתר כללי לרכישה ומכירת שעות תרגול <br></br>. ושאלות ראיון בתחום הייטק</p>
+        <p>
+          אתר כללי לרכישה ומכירת שעות תרגול <br></br>. ושאלות ראיון בתחום הייטק
+        </p>
       </div>
       <div className="continer-btn-log">
         <GoogleLogin
           clientId="1010289593521-j7qff0ed24beejl2ij3hrt9fii0k7k9i.apps.googleusercontent.com"
           render={(renderProrps) => (
-            <button className="btn"
+            <button
+              className="btn"
               color="blue"
               onClick={renderProrps.onClick}
               disabled={renderProrps.disabled}

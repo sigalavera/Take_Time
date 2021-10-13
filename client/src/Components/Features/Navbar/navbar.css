@@ -4,9 +4,9 @@
     flex-direction: row;
 }
 .link-bar ul {
-    
+    /* border: 1px solid rgb(180, 178, 178); */
     width: 500px;
-    height: 50px;
+    height: 70px;
     list-style-type: none;
     display: flex;
     justify-content: space-between;
@@ -18,5 +18,10 @@
     font-weight: 600;
     color: black;
     text-decoration: none;
-    
+    position: relative;
+    transition: 1s;
 }
+.link-bar ul li:hover{
+   transform: scale(1.1);
+}
+
