@@ -22,8 +22,8 @@ const Login = () => {
     try {
       signIn({ data: { result, token } });
       console.log(res);
-
-      history.push("/home");
+      
+      history.push("/");
     } catch (error) {
       console.log(error);
     }
