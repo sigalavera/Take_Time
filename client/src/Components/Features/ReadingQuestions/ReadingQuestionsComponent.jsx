@@ -9,6 +9,7 @@ function useQuery() {
 
 
 const ReadingQuestions = () => {
+    const [showAnswer,setShowAnswer] = useState('white')
     const [showQuestion, setShowQuestion] = useState([]);
     const query = useQuery()
     const history = useHistory()
@@ -37,7 +38,13 @@ const handleKeyPress = (e)=>{
   }, [page])
 
   console.log(showQuestion);
-
+  const answerOnClick =()=>{
+    if(showAnswer==="white"){
+      setShowAnswer("black")
+    }else{
+      setShowAnswer("white")
+    }
+  }
   return (
     <div>
         <div>
@@ -48,13 +55,14 @@ const handleKeyPress = (e)=>{
  <Pagination page={page} />
       {
         showQuestion?.map((item, key) => (
-            <div key={key}>
+            <div onClick={answerOnClick} key={key}>
               <div>
-                שאלה : {item.question}
+              <p> שאלה : {item.question}</p> 
                 <br></br>
-                תשובה : {item.answer}
+              <p > תשובה : <span style={{color:showAnswer}}>{item.answer}</span> </p> 
                 <br></br>
-                תאריך יצירה : {item.createdAt}
+                <p>תאריך יצירה : {item.createdAt}</p>
+                
                 <hr></hr>
               </div>
             </div>

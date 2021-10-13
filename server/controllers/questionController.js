@@ -18,7 +18,7 @@ const getAlllQuestions = async (req, res, next) => {
           numberOfPages: Math.ceil(total / LIMIT),
         });
       })
-      .sort({ _id: -1 })
+      .sort({ _id: 1 })
       .limit(LIMIT)
       .skip(startIndex);
   } catch (err) {
