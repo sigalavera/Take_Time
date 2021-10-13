@@ -6,7 +6,7 @@ API.interceptors.request.use((req) => {
   if (localStorage.getItem("userProfile")) {
     req.headers.Authorization = `Bearer ${
       JSON.parse(localStorage.getItem("userProfile")).token
-    }`;
+      }`;
   }
   return req;
 });
@@ -55,4 +55,4 @@ export const getAllUsers = async () => {
   return await fetch(`http://localhost:5000/user/getAllUsers`)
     .then((res) => res.json())
     .then((data) => data);
-};
+}; 
