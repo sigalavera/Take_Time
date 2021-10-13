@@ -48,6 +48,7 @@ function useQuery() {
 }
 
 const Store = () => {
+
   const [products, setProducts] = useState([]);
   const [users, setUsers] = useState([]);
   const query = useQuery();
@@ -61,8 +62,10 @@ const Store = () => {
       //fetch search qution
     } else {
       history.push("/InterviewQuestions");
+
     }
   };
+
 
   const handleKeyPress = (e) => {
     if (e.keyCode === 13) {
@@ -97,3 +100,4 @@ const Store = () => {
   );
 };
 export default Store;
+

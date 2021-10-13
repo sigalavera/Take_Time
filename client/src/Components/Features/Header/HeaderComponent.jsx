@@ -12,22 +12,26 @@ const Header = () => {
       console.log(data);
       setUserName(data.result.email);
       setAvatar(data.result.imageUrl);
+
     } else {
       return;
     }
   };
+
 
   useEffect(() => {
     getUserName();
   }, [avatar]);
   return (
     <div className="continer">
+
       <NavBar />
       <div>
         <img src={avatar} alt="" />
         <h1>{userName}</h1>
       </div>
       <Coins />
+
     </div>
   );
 };

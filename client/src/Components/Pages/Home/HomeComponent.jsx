@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import "./home.css";
 
 const Home = () => {
+
   const history = useHistory();
   const InterviewQuestions = () => history.push("/InterviewQuestions");
   const Store = () => history.push("/Store");
@@ -16,3 +17,5 @@ const Home = () => {
   );
 };
 export default Home;
+
+
