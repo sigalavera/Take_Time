@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React,{useEffect} from "react";
 import { addPerson } from 'react-chat-engine';
 import DM from "../DirectChat/DM";
 const AddPersonToChat = () =>{

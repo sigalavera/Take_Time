@@ -3,11 +3,9 @@ import "./footer.css";
 
 const Footer = () => {
     return (
-        <div className="body-footer">
-            <p>
-                FOOTER
-            </p>
-        </div>
-    )
+        <footer className="FooterDiv">
+          <p>Copyright © 2021.</p>
+        </footer>
+      );
 }
 export default Footer;
